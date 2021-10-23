@@ -1,0 +1,12 @@
+set bell-style none
+set completion-ignore-case on
+
+# <Tab> will auto-complete with first available match, then cycle through
+"\t": menu-complete
+# <Shift+Tab> will cycle backwards through matches
+"\e[Z": menu-complete-backward 
+# <Alt+'> will show possible completions with current input
+"\e'": possible-completions
+
+
+

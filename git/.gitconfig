@@ -1,0 +1,9 @@
+[credential]
+	helper = store
+[core]
+	editor = vim
+[user]
+	email = dlundgaard8@gmail.com
+	name = Daniel Lundgaard
+[pull]
+	ff = only
