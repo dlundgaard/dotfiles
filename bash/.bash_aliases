@@ -11,6 +11,11 @@ alias mv="mv -i"
 alias py="python"
 alias cdw="cd $WINHOME"
 
+serve() {
+    port=${1:-80}
+    sudo python3 -m http.server $port
+}
+
 # cd to Windows (WSL) path 
 wcd() {
     cd "$(wslpath "$1")"
