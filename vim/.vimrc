@@ -15,18 +15,20 @@ set smartindent
 set smartcase
 set laststatus=2
 set visualbell
-set undodir=~/.vim/undo
+set noswapfile
+set dir=/tmp
+set undodir=/tmp
+set backupdir=/tmp
 
 colorscheme codedark
 hi Normal guibg=NONE ctermbg=NONE
 hi MatchParen cterm=underline ctermbg=none ctermfg=cyan
 
-vnoremap <silent> <leader>y :w !clip.exe<CR><CR>
+inoremap <C-d> <Esc>
 nnoremap <C-s> <Esc>:w<CR>
+vnoremap <silent> <leader>y :w !clip.exe<CR><CR>
 nnoremap Å O<Esc>j
 nnoremap <leader>ale :ALEToggle<CR>
-"nnoremap <TAB> >>
-"nnoremap <S-TAB> <<
 
 " disable ALE by default
 let g:ale_enabled=0
