@@ -33,3 +33,6 @@ yt-audio() {
     youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 -f 251 "$1"
 }
 
+disk_usage() {
+    du -hd0 "$1"
+}
