@@ -36,3 +36,7 @@ yt-audio() {
 disk_usage() {
     du -hd0 "$1"
 }
+
+cut_video () {
+    ffmpeg -i "$1" -ss $2 -to $3 -c:v copy -c:a copy $4.mp4
+}
