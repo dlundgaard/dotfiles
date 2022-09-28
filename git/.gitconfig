@@ -7,3 +7,5 @@
 	name = Daniel Lundgaard
 [pull]
 	ff = only
+[init]
+	defaultBranch = main
