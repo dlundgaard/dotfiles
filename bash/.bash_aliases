@@ -3,12 +3,18 @@
 export WINHOME="/mnt/c/Users/dl"
 export TRASH_CAN="$HOME/.local/trash"
 
-# setting aliases
+# enable opening files in default Windows app with xdg-open
+export BROWSER="powershell.exe /C start"
+
+ #setting aliases
 alias grep="grep --color"
 alias lt="ls -alhr --color --sort=time"
 alias rm="rm -i"
 alias mv="mv -i"
+alias n="nnn"
 alias py="python"
+alias R="R --no-save"
+alias psychopy="$WINHOME/AppData/Local/Programs/PsychoPy/python.exe"
 alias cdw="cd $WINHOME"
 
 serve() {

@@ -20,6 +20,7 @@ then
     [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 fi
 
+# setting history size and path truncation
 HISTSIZE=1000
 HISTFILESIZE=2000
 HISTCONTROL=ignoreboth:erasedups
