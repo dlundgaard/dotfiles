@@ -13,7 +13,9 @@ alias rm="rm -i"
 alias mv="mv -i"
 alias n="nnn"
 alias py="python"
-alias R="R --no-save"
+alias r="R --no-save"
+alias yt="yt-dlp"
+alias youtube-dl="yt-dlp"
 alias psychopy="$WINHOME/AppData/Local/Programs/PsychoPy/python.exe"
 alias cdw="cd $WINHOME"
 
@@ -36,7 +38,7 @@ trash() {
 
 # download sound from youtube-video
 yt-audio() {
-    youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 -f 251 "$1"
+    yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 -f 251 "$1"
 }
 
 disk_usage() {
