@@ -45,6 +45,10 @@ disk_usage() {
     du -hd0 "$1"
 }
 
-cut_video () {
+cut_video() {
     ffmpeg -i "$1" -ss $2 -to $3 -c:v copy -c:a copy $4.mp4
+}
+
+pages() {
+    pdftotext "$1" - | echo "$(expr $(wc -m) / 2400) (normalized) pages"
 }
