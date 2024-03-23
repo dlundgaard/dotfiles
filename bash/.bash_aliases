@@ -12,12 +12,17 @@ alias lt="ls -alhr --color --sort=time"
 alias rm="rm -i"
 alias mv="mv -i"
 alias n="nnn"
+alias lg="lazygit"
 alias py="python"
 alias r="R --no-save"
 alias yt="yt-dlp"
 alias youtube-dl="yt-dlp"
 alias psychopy="$WINHOME/AppData/Local/Programs/PsychoPy/python.exe"
 alias cdw="cd $WINHOME"
+
+fonts() {
+    fc-list : family | sort | uniq
+}
 
 serve() {
     port=${1:-80}
