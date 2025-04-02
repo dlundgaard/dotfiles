@@ -16,10 +16,10 @@ alias lg="lazygit"
 alias python="python.exe"
 alias pip="pip.exe"
 alias py="python"
+alias uv="uv.exe"
 alias r="R --no-save"
 alias yt="yt-dlp"
 alias youtube-dl="yt-dlp"
-alias psychopy="$WINHOME/AppData/Local/Programs/PsychoPy/python.exe"
 alias cdw="cd $WINHOME"
 
 fonts() {
@@ -32,8 +32,8 @@ serve() {
 }
 
 # cd to Windows (WSL) path 
-wcd() {
-    cd "$(wslpath "$1")"
+todir() {
+    cd "$(dirname "$(wslpath -u "$1")")"
 }
 
 # custom functions
@@ -56,6 +56,6 @@ cut_video() {
     ffmpeg -i "$1" -ss $2 -to $3 -c:v copy -c:a copy $4.mp4
 }
 
-pages() {
+pagecount() {
     pdftotext "$1" - | echo "$(expr $(wc -m) / 2400) (normalized) pages"
 }
