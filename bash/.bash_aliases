@@ -57,5 +57,5 @@ cut_video() {
 }
 
 pagecount() {
-    pdftotext "$1" - | echo "$(expr $(wc -m) / 2400) (normalized) pages"
+    pdftotext "$1" - | echo "$(expr $(wc -m) / 2400) (standard) pages"
 }
