@@ -45,7 +45,7 @@ trash() {
 
 # download sound from youtube-video
 yt-audio() {
-    yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 -f 251 "$1"
+    yt-dlp.exe --extract-audio --audio-format mp3 --audio-quality 0 -f 251 "$1"
 }
 
 disk_usage() {
