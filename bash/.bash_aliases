@@ -44,7 +44,7 @@ trash() {
 }
 
 # download sound from youtube-video
-yt-audio() {
+tomp3() {
     yt-dlp.exe --extract-audio --audio-format mp3 --audio-quality 0 -f 251 "$1"
 }
 
