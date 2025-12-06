@@ -8,7 +8,7 @@ export BROWSER="powershell.exe /C start"
 
  #setting aliases
 alias grep="grep --color"
-alias lt="ls -alhr --color --sort=time"
+alias lt="ls -alhr --color -t"
 alias rm="rm -i"
 alias mv="mv -i"
 alias n="nnn"

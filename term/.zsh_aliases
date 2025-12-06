@@ -1,0 +1,44 @@
+
+# naming useful directories
+export TRASH="$HOME/.local/trash"
+
+ #setting aliases
+alias grep="grep --color"
+alias lt="ls -alhr --color -t"
+alias rm="rm -i"
+alias mv="mv -i"
+alias lg="lazygit"
+alias ff="fzf"
+
+fonts() {
+    fc-list : family | sort | uniq
+}
+
+serve() {
+    port=${1:-80}
+    sudo python3 -m http.server $port
+}
+
+# custom functions
+trash() {
+    mkdir -p $TRASH_CAN
+    echo ""$1" -> $TRASH_CAN"
+    mv -t $TRASH_CAN $1
+}
+
+# download sound from youtube-video
+tomp3() {
+    yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 -f 251 "$1"
+}
+
+disk_usage() {
+    du -hd0 "$1"
+}
+
+cut_video() {
+    ffmpeg -i "$1" -ss $2 -to $3 -c:v copy -c:a copy $4.mp4
+}
+
+pagecount() {
+    pdftotext "$1" - | echo "$(expr $(wc -m) / 2400) (standard) pages"
+}

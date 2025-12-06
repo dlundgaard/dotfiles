@@ -28,7 +28,7 @@ for SUBDIR in $(find $DOTFILES_SRC -mindepth 1 -maxdepth 1); do
             fi
         fi
         # make symbolic link, overwriting if the symlink already exists
-        ln --symbolic --force --verbose $DOTFILE_PATH $DOTFILE
+        ln -s -F -v $DOTFILE_PATH $DOTFILE
     done
 done
 echo "[DONE]"
