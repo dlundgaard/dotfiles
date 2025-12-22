@@ -1,6 +1,6 @@
 
 # naming useful directories
-export TRASH="$HOME/.local/trash"
+export TRASH="$HOME/.trash"
 
  #setting aliases
 alias grep="grep --color"
@@ -9,10 +9,6 @@ alias rm="rm -i"
 alias mv="mv -i"
 alias lg="lazygit"
 alias ff="fzf"
-
-fonts() {
-    fc-list : family | sort | uniq
-}
 
 serve() {
     port=${1:-80}
@@ -41,4 +37,8 @@ cut_video() {
 
 pagecount() {
     pdftotext "$1" - | echo "$(expr $(wc -m) / 2400) (standard) pages"
+}
+
+ucloud() {
+    code --folder-uri vscode-remote://ssh-remote+ucloud@ssh.cloud.sdu.dk:$1/work/
 }

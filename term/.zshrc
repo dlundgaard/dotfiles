@@ -15,4 +15,4 @@ autoload -U colors && colors
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 CASE_SENSITIVE="false"
 
-PROMPT="(%n@%m)-[%~] "
+PROMPT="(%n@%m)-[%(4~|.../%3~|%~)] "
