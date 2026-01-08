@@ -4,7 +4,7 @@ export TRASH="$HOME/.trash"
 
  #setting aliases
 alias grep="grep --color"
-alias lt="ls -alhr --color -t"
+alias ll="ls -alhr --color -t"
 alias rm="rm -i"
 alias mv="mv -i"
 alias lg="lazygit"
