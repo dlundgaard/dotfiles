@@ -4,15 +4,16 @@ then
      # load aliases
     [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 
-    source <(fzf --zsh)
-
     # add rust binaries to path
     [ -f "~/.cargo/env" ] && source "~/.cargo/env"
+
+    # initialize fuzzy finder
+    source <(fzf --zsh)
 fi
 
 autoload -Uz compinit && compinit
 autoload -U colors && colors
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-CASE_SENSITIVE="false"
 
+CASE_SENSITIVE="false"
 PROMPT="(%n@%m)-[%(4~|.../%3~|%~)] "
