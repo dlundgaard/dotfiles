@@ -1,5 +1,6 @@
 [credential]
 	helper = store
+	gitLabAuthModes = pat
 [core]
 	editor = vim
 [user]

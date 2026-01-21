@@ -1,4 +1,11 @@
 
+autoload -U colors && colors
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+CASE_SENSITIVE="false"
+PROMPT="(%n@%m)-[%(4~|.../%3~|%~)] "
+
 if [[ $- == *i* ]] # if in interactive shell
 then
      # load aliases
@@ -9,11 +16,7 @@ then
 
     # initialize fuzzy finder
     source <(fzf --zsh)
+    bindkey "ç" fzf-cd-widget
+    bindkey "ƒ" fzf-file-widget
 fi
 
-autoload -Uz compinit && compinit
-autoload -U colors && colors
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-
-CASE_SENSITIVE="false"
-PROMPT="(%n@%m)-[%(4~|.../%3~|%~)] "

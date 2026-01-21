@@ -22,9 +22,10 @@ trash() {
     mv -t $TRASH_CAN $1
 }
 
-# download sound from youtube-video
-tomp3() {
-    yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 -f 251 "$1"
+# download sound from youtube-video to spotify local files
+tospotify()
+{
+    yt-dlp -x --audio-format m4a --audio-quality 0 --embed-thumbnail --add-metadata -P "~/OneDrive/Music" "$1"
 }
 
 disk_usage() {
