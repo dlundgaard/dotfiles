@@ -1,30 +1,26 @@
-
-# naming useful directories
-export TRASH="$HOME/.trash"
-
- #setting aliases
 alias grep="grep --color"
 alias ll="ls -alhr --color -t"
 alias rm="rm -i"
 alias mv="mv -i"
+alias gits="git status"
+alias gitc="git commit"
+alias gitp="git push"
 alias lg="lazygit"
 alias ff="fzf"
+export TRASH_CAN="$HOME/.trash"
 
-serve() {
-    port=${1:-80}
-    sudo python3 -m http.server $port
-}
-
-# custom functions
 trash() {
     mkdir -p $TRASH_CAN
     echo ""$1" -> $TRASH_CAN"
     mv -t $TRASH_CAN $1
 }
 
-# download sound from youtube-video to spotify local files
-tospotify()
-{
+serve() {
+    port=${1:-80}
+    sudo python3 -m http.server $port
+}
+
+tospotify() {
     yt-dlp -x --audio-format m4a --audio-quality 0 --embed-thumbnail --add-metadata -P "~/OneDrive/Music" "$1"
 }
 
@@ -38,8 +34,4 @@ cut_video() {
 
 pagecount() {
     pdftotext "$1" - | echo "$(expr $(wc -m) / 2400) (standard) pages"
-}
-
-ucloud() {
-    code --folder-uri vscode-remote://ssh-remote+ucloud@ssh.cloud.sdu.dk:$1/work/
 }
