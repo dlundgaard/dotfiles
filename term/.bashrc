@@ -40,3 +40,18 @@ ENV_COLOR="\[\e];\W\a\]"
 # setting prompt-string
 PS1="$ENV_COLOR$NEUTRAL$VIRTUAL_ENV$BRACKET_COLOR($USER_COLOR\u@\h$BRACKET_COLOR)-[$DIR_COLOR\w$BRACKET_COLOR]-$PROMPT_COLOR\$ " 
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/Users/dlundgaard/.juliaup/bin:*)
+        ;;
+
+    *)
+        export PATH=/Users/dlundgaard/.juliaup/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<

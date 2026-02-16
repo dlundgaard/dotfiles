@@ -41,8 +41,15 @@
 	autoSquash = true
 	autoStash = true
 	updateRefs = true
-
 [merge]
 	# (just 'diff3' if git version < 2.3)
 	# conflictstyle = zdiff3 
-
+[lfs "customtransfer.xet"]
+	path = git-xet
+	args = transfer
+	concurrent = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
