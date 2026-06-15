@@ -9,6 +9,12 @@ shell-integration = zsh
 shell-integration-features = title,sudo,ssh-env
 macos-titlebar-proxy-icon = hidden
 scrollback-limit = 1000000
+title = ""
+
+# command = /bin/zsh -c 'tmux new -As0'
+# keybind = super+t=unbind
+# keybind = super+w=unbind
+# keybind = super+shift+t=unbind
 
 # This is the configuration file for Ghostty.
 #

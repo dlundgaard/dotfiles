@@ -55,3 +55,5 @@ case ":$PATH:" in
 esac
 
 # <<< juliaup initialize <<<
+
+export PATH="$PATH:$HOME/.local/bin"

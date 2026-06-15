@@ -1,8 +1,10 @@
 
 autoload -U colors && colors
 autoload -Uz compinit && compinit
+autoload edit-command-line
 setopt INC_APPEND_HISTORY
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zle -N edit-command-line
 
 CASE_SENSITIVE="false"
 PROMPT="(%n@%m)-[%(4~|.../%3~|%~)] "
@@ -16,5 +18,9 @@ then
     source <(fzf --zsh)
     bindkey "ç" fzf-cd-widget
     bindkey "ƒ" fzf-file-widget
+
+    bindkey '^X' edit-command-line
 fi
 
+
+export PATH="$PATH:$HOME/.local/bin"

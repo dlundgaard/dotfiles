@@ -1,10 +1,6 @@
 
 # naming useful directories
-export WINHOME="/mnt/c/Users/dl"
 export TRASH_CAN="$HOME/.local/trash"
-
-# enable opening files in default Windows app with xdg-open
-export BROWSER="powershell.exe /C start"
 
  #setting aliases
 alias grep="grep --color"
@@ -20,7 +16,6 @@ alias uv="uv.exe"
 alias r="R --no-save"
 alias yt="yt-dlp"
 alias youtube-dl="yt-dlp"
-alias cdw="cd $WINHOME"
 
 fonts() {
     fc-list : family | sort | uniq
@@ -45,7 +40,7 @@ trash() {
 
 # download sound from youtube-video
 tomp3() {
-    yt-dlp.exe --extract-audio --audio-format mp3 --audio-quality 0 -f 251 "$1"
+    yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 -f 251 "$1"
 }
 
 disk_usage() {

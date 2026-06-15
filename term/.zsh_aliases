@@ -4,16 +4,19 @@ alias rm="rm -i"
 alias mv="mv -i"
 alias gits="git status"
 alias gita="git add"
+alias gitb="git branch"
 alias gitc="git commit"
 alias gitp="git push"
 alias lg="lazygit"
 alias ff="fzf"
+alias bru="brew update && brew upgrade -y && brew upgrade -y --cask --greedy"
+
 export TRASH_CAN="$HOME/.trash"
 
 trash() {
     mkdir -p $TRASH_CAN
     echo ""$1" -> $TRASH_CAN"
-    mv -t $TRASH_CAN $1
+    mv $TRASH_CAN $1
 }
 
 serve() {
@@ -25,12 +28,12 @@ tospotify() {
     yt-dlp -x --audio-format m4a --audio-quality 0 --embed-thumbnail --add-metadata -P "~/OneDrive/Music" "$1"
 }
 
-disk_usage() {
-    du -hd0 "$1"
-}
-
 cut_video() {
     ffmpeg -i "$1" -ss $2 -to $3 -c:v copy -c:a copy $4.mp4
+}
+
+disk_usage() {
+    du -hd0 "$1"
 }
 
 pagecount() {
